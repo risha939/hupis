@@ -1,4 +1,5 @@
 import { registerAs } from '@nestjs/config';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 export default registerAs('database', () => ({
   type: 'postgres' as const,
@@ -9,6 +10,7 @@ export default registerAs('database', () => ({
   database: process.env.DB_NAME ?? 'postgres',
   autoLoadEntities: true,
   synchronize: process.env.NODE_ENV !== 'production',
+  namingStrategy: new SnakeNamingStrategy(),
   ssl:
     (process.env.DB_SSL ?? 'false') === 'true'
       ? { rejectUnauthorized: false }
