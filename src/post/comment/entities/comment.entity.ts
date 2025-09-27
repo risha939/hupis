@@ -42,9 +42,10 @@ export class Comment {
   @ManyToOne(() => Comment, (comment) => comment.replies, {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
+    nullable: true,
   })
   @JoinColumn({ name: 'parent_comment_id' })
-  parentComment: Comment;
+  parentComment: Comment | null;
 
   @RelationId((comment: Comment) => comment.parentComment)
   parentCommentId: number | null;

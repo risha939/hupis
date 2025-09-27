@@ -5,10 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Comment } from './entities/comment.entity';
 import { PostModule } from '../post/post.module';
 import { Post } from '../post/entities/post.entity';
+import { User } from '../../user/entities/user.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Comment, Post])],
+  imports: [TypeOrmModule.forFeature([Comment, Post, User])],
   controllers: [CommentController],
   providers: [CommentService],
 })
-export class CommentModule {}
+export class CommentModule { }

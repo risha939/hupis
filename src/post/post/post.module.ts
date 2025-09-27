@@ -9,5 +9,6 @@ import { PostImage } from './entities/post-image.entity';
   imports: [TypeOrmModule.forFeature([Post, PostImage])],
   controllers: [PostController],
   providers: [PostService],
+  exports: [PostService],
 })
-export class PostModule {}
+export class PostModule { }

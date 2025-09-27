@@ -28,11 +28,12 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
 
     // 토큰 만료 등의 정보가 있는 경우
     if (info) {
+      console.log('JWT Info:', info);
       if (info.name === 'TokenExpiredError') {
         throw new UnauthorizedException('토큰이 만료되었습니다.');
       }
       if (info.name === 'JsonWebTokenError') {
-        throw new UnauthorizedException('유효하지 않은 토큰입니다.');
+        throw new UnauthorizedException(`유효하지 않은 토큰입니다: ${info.message}`);
       }
     }
 

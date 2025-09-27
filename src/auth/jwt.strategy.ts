@@ -9,10 +9,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: config.get<string>('jwt.secret'),
-      issuer: config.get<string>('jwt.signOptions.issuer'),
-      // audience: config.get<string>('jwt.signOptions.audience'),
-      algorithms: config.get<any>('jwt.signOptions.algorithm') ? [config.get<any>('jwt.signOptions.algorithm')] : undefined,
+      secretOrKey: process.env.JWT_SECRET || 'dev-secret',
+      issuer: process.env.JWT_ISSUER || 'http://localhost:3000',
+      // audience: process.env.JWT_AUDIENCE || 'http://localhost:3000',
+      algorithms: process.env.JWT_ALGORITHM ? [process.env.JWT_ALGORITHM] : ['HS256'],
     });
   }
 
