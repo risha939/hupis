@@ -11,7 +11,7 @@ import { RepostResponseDto } from './response/repost-response.dto';
 import { RepostListResponseDto } from './response/repost-list-response.dto';
 import { PostDetailResponseDto } from '../post/response/post-detail-response.dto';
 import { ProfileResponseDto } from '../../user/response/profile-response.dto';
-import { RepostDeleteResponseDto } from './response/repost-\bdelete-response.dto';
+import { RepostDeleteResponseDto } from './response/repost-delete-response.dto';
 import { PostService } from '../post/post.service';
 
 @Injectable()

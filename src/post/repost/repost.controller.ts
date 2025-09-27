@@ -8,7 +8,7 @@ import type { IUser } from 'src/shared/types/user.types';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiParam } from '@nestjs/swagger';
 import { RepostResponseDto } from './response/repost-response.dto';
 import { RepostListResponseDto } from './response/repost-list-response.dto';
-import { RepostDeleteResponseDto } from './response/repost-\bdelete-response.dto';
+import { RepostDeleteResponseDto } from './response/repost-delete-response.dto';
 
 @ApiTags('Repost')
 @ApiBearerAuth('JWT-auth')

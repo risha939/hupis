@@ -11,7 +11,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       ignoreExpiration: false,
       secretOrKey: process.env.JWT_SECRET || 'dev-secret',
       issuer: process.env.JWT_ISSUER || 'http://localhost:3000',
-      // audience: process.env.JWT_AUDIENCE || 'http://localhost:3000',
       algorithms: process.env.JWT_ALGORITHM ? [process.env.JWT_ALGORITHM] : ['HS256'],
     });
   }

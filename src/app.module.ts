@@ -46,4 +46,4 @@ import { LikeModule } from './post/like/like.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
