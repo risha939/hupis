@@ -26,13 +26,19 @@ git clone git@github.com:risha939/hupis.git
 cd hupis
 ```
 
-#### 2단계: Docker 환경 실행
+#### 2단계: 환경변수 파일 설정
+```bash
+# 환경변수 파일 설정 
+cp env.docker .env
+```
+
+#### 3단계: Docker 환경 실행
 ```bash
 # 개발 환경 시작 (빌드 포함)
 npm run docker:dev
 ```
 
-#### 3단계: 서비스 접속
+#### 4단계: 서비스 접속
 - **API 서버**: http://localhost:3000
 - **API 문서 (Swagger)**: http://localhost:3000/docs/hupis
 - **데이터베이스 관리 (pgAdmin)**: http://localhost:5050
